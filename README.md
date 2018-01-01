@@ -1,2 +1,2 @@
 # Millipe
-A Arduboy Centipede Clone
+An Arduboy Centipede Clone

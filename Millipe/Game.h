@@ -172,6 +172,6 @@ void GameUpdate() {
   DrawCente();
 
   if (!CheckAlive()){ sound.noTone(); sound.tone(NOTE_C5,50,NOTE_E5,50,NOTE_G5,50);gameState = GameState::NextLevel;}
-  if ((playerobj.H == 0)||(playerobj.H >)) {gameState = GameState::Dead;}
+  if ((playerobj.H == 0)||(playerobj.H > 5)) {gameState = GameState::Dead;}
   
   }

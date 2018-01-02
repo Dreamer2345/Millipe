@@ -3,7 +3,7 @@
 #define MAXCENTE 30
 
 bool Check(uint8_t x,uint8_t y){
-  if ((y+8 >= 63)||(y > 63)) return true;
+  if ((y+8 > 64)||(y > 64)) return true;
   if (x == 0) return true;
   for (uint8_t j=0; j<MAXSHROOM; j++)
         if (Mushrooms[j].GetActive() && Collision(Mushrooms[j].GetX(),Mushrooms[j].GetY(),x,y)){
@@ -60,8 +60,7 @@ void CenteClass::Update(){
     if ((x > 119)||(x==0)) {x = (127-8); playerobj.H--; Direct = !Direct;}
 
     if (Check(x-8,y)&&(Check(x,y+8)&&Check(x,y-8))){
-      x += 8;
-      
+      while (Check(x,y+8)&&Check(x,y-8)) {x += 8;}
     }
     
   }

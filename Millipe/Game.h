@@ -10,11 +10,12 @@ void LevelSetup(){
   uint8_t y;
   playerobj.H = 5;
   POINTS = 0;
+  Level = 0;
   bool Done = false;
   for (uint8_t j=0; j<MAXSTARTSHROOM; j++){
     Done = false;
     while (not Done) {
-      y = 8*random(0,7);
+      y = 8*random(0,8);
       x = 8*random(3,14);
       Done = true;
       for (uint8_t i=0; i<MAXSTARTSHROOM; i++){
@@ -32,7 +33,7 @@ void NewLevel(){
     Cente[j].Kill();
   }
   
-  uint8_t y = 8*random(0,7);
+  uint8_t y = 8*random(0,8);
   uint8_t leng = (Length+Level);
   if (leng >= MAXCENTE) {leng = MAXCENTE;}
   for (uint8_t j=0; j<leng; j++){
@@ -160,6 +161,11 @@ bool CheckAlive(){
   return Alive;
 }
 
+void ShowHealth(){
+  for(uint8_t i=0; i<playerobj.H; i++)
+    sprites.drawSelfMasked(119,(i*8),Tiles,3);
+}
+
 void GameUpdate() {
   playerobj.PlayerMovement();
   UpdateBullets();
@@ -170,7 +176,7 @@ void GameUpdate() {
   DrawPlayer();
   DrawBullets();
   DrawCente();
-
+  ShowHealth();
   if (!CheckAlive()){ sound.noTone(); sound.tone(NOTE_C5,50,NOTE_E5,50,NOTE_G5,50);gameState = GameState::NextLevel;}
   if ((playerobj.H == 0)||(playerobj.H > 5)) {gameState = GameState::Dead;}
   

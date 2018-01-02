@@ -1,6 +1,6 @@
 #pragma once
 
-#define MAXBULLET 6
+#define MAXBULLET 3
 
 
 class BulletClass{

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 2,
+  "title": "Millipe",
+  "description": "Millipe is a side on top down shooter where you have to shoot the decending bugs before they reach the bottom",
+  "author": "Dreamer2345",
+  "version": "1.0",
+  "date": "2018-01-01",
+  "genre": "Shooter",
+  "publisher": "Lone Cog Coder",
+  "sourceUrl": "https://github.com/Dreamer2345/Millipe/",
+  "binaries": [
+    {
+      "title": "Millipe",
+      "filename": "MillipeBuild.hex",
+      "device": "Arduboy"
+    }
+  ],
+  "buttons": [
+    {
+      "control": "Up",
+      "action": "move left"
+    },
+    {
+      "control": "Down",
+      "action": "move right"
+    },
+    {
+      "control": "Right",
+      "action": "shoot"
+    },
+    {
+      "control": "A",
+      "action": "shoot"
+    }
+  ],
+}

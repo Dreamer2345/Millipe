@@ -115,7 +115,7 @@ void updateMainMenu()
 
 	if (showarrow)
 	{
-		Sprites::drawOverwrite(36, 51, Arrow, 0);
+		Sprites::drawOverwrite(36, 55, Arrow, 0);
 	}
 
 	Sprites::drawOverwrite(100, 2, Speaker, arduboy.audio.enabled() ? 1 : 0);
